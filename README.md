@@ -31,6 +31,21 @@ Read Xbox controller data from /dev/input/event0 (default) and convert to Pokken
 
 Note, scripts can run concurrently, but inputs from the controller may only be useful during pauses.
 
+## Xbox Controller over LAN (Educational)
+The controller data can be streamed over LAN with e.g. netcat.
+
+On the Raspberry Pi connected to the Nintendo Switch:
+
+    nc -klu -p44329 >/dev/hidg0
+
+On the system with the controller plugged in (might need to add argument to select device event#):
+
+    ./py_evdev_xbox.py | nc -u raspberrypi 44329
+
+Wi-Fi drops occasional UDP packets, so this isn't practical.
+SSH can probably be used but might incur weird latency issues.
+Ethernet had the best performance, of course.
+
 ## References
 1. https://github.com/FeralAI/MPG
 1. https://github.com/progmem/Switch-Fightstick
