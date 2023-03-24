@@ -106,7 +106,7 @@ class PokkenController:
             s = 0xff
         return int(s)
 
-    def do(self, t_duration=0):
+    def do(self):
         button  = self.state_button.value
         hat     = self.state_hat.value
         lx      = self.float_to_stick_value(self.state_stick_l[0])
@@ -126,7 +126,6 @@ def main():
         spinlock.delay(100)
         pokken_state = pc.tilt_stick_l((1, 0)).press(PokkenControllerButtons.L3).tilt_stick_r((0, 1)).do()
         print('{:.7f} : {}'.format(time.time(), pokken_state))
-
 
 if __name__ == "__main__":
     main()
