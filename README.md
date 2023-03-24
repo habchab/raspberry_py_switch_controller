@@ -56,3 +56,4 @@ Ethernet had the best performance, of course.
 1. https://github.com/omakoto/raspberry-switch-control
 1. https://github.com/milador/RaspberryPi-Joystick
 1. https://github.com/KawaSwitch/Poke-Controller
+1. https://github.com/larsks/systemd-usb-gadget/blob/master/remove-gadget.sh
